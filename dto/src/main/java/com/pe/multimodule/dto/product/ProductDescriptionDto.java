@@ -11,7 +11,7 @@ public class ProductDescriptionDto extends AbstractEntityDto {
 
     @Schema(description = "The product's sku identification.")
     @JsonProperty(value = "sku")
-    private UUID sku;
+    private String sku;
 
     public ProductDescriptionDto() {
         // POJO
@@ -21,11 +21,11 @@ public class ProductDescriptionDto extends AbstractEntityDto {
         super(id);
     }
 
-    public UUID getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(UUID sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 
