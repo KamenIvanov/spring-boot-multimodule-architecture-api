@@ -1,6 +1,7 @@
 package com.pe.multimodule.api.pub;
 
 import com.pe.multimodule.dto.ResponseDto;
+import com.pe.multimodule.dto.SortDirectionDto;
 import com.pe.multimodule.dto.product.ProductDescriptionDto;
 import com.pe.multimodule.dto.product.ProductDescriptionsDto;
 import com.pe.multimodule.dto.product.ProductSortOptionDto;
@@ -31,9 +32,10 @@ public interface ProductsFilteringRestService {
             })
     })
     ProductDescriptionsDto getProducts(
-            @Parameter(description = "The page index. First page is index 1.", required = true, in = ParameterIn.QUERY) int page,
-            @Parameter(description = "The page size, the minimum size is 1.", required = true, in = ParameterIn.QUERY) int size,
-            @Parameter(description = "How the products should be sorted before put in the page.", required = true, in = ParameterIn.QUERY) ProductSortOptionDto sort
+            @Parameter(description = "The page index. First page is index 1.", in = ParameterIn.QUERY) int page,
+            @Parameter(description = "The page size, the minimum size is 1.", in = ParameterIn.QUERY) int size,
+            @Parameter(description = "How the products should be sorted before put in the page.", in = ParameterIn.QUERY) ProductSortOptionDto sort,
+            @Parameter(description = "How the products should be sorted before put in the page.", in = ParameterIn.QUERY) SortDirectionDto direction
     );
 
     @Operation(summary = "Loads the products associated with the given identification.")

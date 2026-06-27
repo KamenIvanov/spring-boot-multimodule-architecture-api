@@ -1,6 +1,7 @@
 package com.pe.multimodule.api.secured;
 
 import com.pe.multimodule.dto.ResponseDto;
+import com.pe.multimodule.dto.SortDirectionDto;
 import com.pe.multimodule.dto.product.NewProductDto;
 import com.pe.multimodule.dto.product.ProductDto;
 import com.pe.multimodule.dto.product.ProductSortOptionDto;
@@ -28,9 +29,10 @@ public interface ProductsRestService extends CrudRestService<NewProductDto, Prod
             )
     })
     ProductsDto getProducts(
-            @Parameter(description = "The requested page index. The first page is 1.", required = true, in = ParameterIn.QUERY) int page,
-            @Parameter(description = "An page's size. The minimum is 1 element.", required = true, in = ParameterIn.QUERY) int size,
-            @Parameter(description = "How the publications should be sorted before put in the page.", required = true, in = ParameterIn.QUERY) ProductSortOptionDto sort,
+            @Parameter(description = "The requested page index. The first page is 1.", in = ParameterIn.QUERY) int page,
+            @Parameter(description = "An page's size. The minimum is 1 element.", in = ParameterIn.QUERY) int size,
+            @Parameter(description = "How the publications should be sorted before put in the page.", in = ParameterIn.QUERY) ProductSortOptionDto sort,
+            @Parameter(description = "How the products should be sorted before put in the page.", in = ParameterIn.QUERY) SortDirectionDto direction,
             @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 }
