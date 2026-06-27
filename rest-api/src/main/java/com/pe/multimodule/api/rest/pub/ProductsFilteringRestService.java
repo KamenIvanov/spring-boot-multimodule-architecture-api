@@ -1,4 +1,4 @@
-package com.pe.multimodule.api.pub;
+package com.pe.multimodule.api.rest.pub;
 
 import com.pe.multimodule.dto.ResponseDto;
 import com.pe.multimodule.dto.SortDirectionDto;

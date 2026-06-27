@@ -1,4 +1,4 @@
-package com.pe.multimodule.api.secured;
+package com.pe.multimodule.api.rest.secured;
 
 import com.pe.multimodule.dto.ResponseDto;
 import com.pe.multimodule.dto.SortDirectionDto;
