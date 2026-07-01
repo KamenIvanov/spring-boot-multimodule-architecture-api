@@ -40,7 +40,7 @@ public interface CrudRestService<NewDto extends AbstractDto, Dto extends Abstrac
     })
     Dto create(
             @Parameter(description = "Entity's data.", required = true) NewDto newDto,
-            @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
+            @Parameter(description = "An user's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 
     /**
@@ -65,7 +65,7 @@ public interface CrudRestService<NewDto extends AbstractDto, Dto extends Abstrac
     })
     Dto update(
             @Parameter(description = "Entity's data.", required = true) Dto dto,
-            @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
+            @Parameter(description = "The user's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 
     /**
@@ -90,7 +90,7 @@ public interface CrudRestService<NewDto extends AbstractDto, Dto extends Abstrac
     })
     Dto loadById(
             @Parameter(description = "The requested entity's identification.", required = true, in = ParameterIn.PATH) UUID id,
-            @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
+            @Parameter(description = "The user's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 
     /**
@@ -114,6 +114,6 @@ public interface CrudRestService<NewDto extends AbstractDto, Dto extends Abstrac
     })
     void delete(
             @Parameter(description = "The entity's identification being deleted.", required = true, in = ParameterIn.PATH) UUID id,
-            @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
+            @Parameter(description = "The user's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 }

@@ -18,10 +18,10 @@ import java.util.UUID;
 
 public interface ProductsRestService extends CrudRestService<NewProductDto, ProductDto> {
 
-    @Operation(summary = "Loads account's publications in pages.")
+    @Operation(summary = "Loads user's publications in pages.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The requested page's publications.", content = @Content),
-            @ApiResponse(responseCode = "400", description = "Invalid account identification is supplied.", content = {
+            @ApiResponse(responseCode = "400", description = "Invalid user identification is supplied.", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseDto.class))}
             ),
             @ApiResponse(responseCode = "401", description = "No authorization token is provided.", content = {
@@ -33,6 +33,6 @@ public interface ProductsRestService extends CrudRestService<NewProductDto, Prod
             @Parameter(description = "An page's size. The minimum is 1 element.", in = ParameterIn.QUERY) int size,
             @Parameter(description = "How the publications should be sorted before put in the page.", in = ParameterIn.QUERY) ProductSortOptionDto sort,
             @Parameter(description = "How the products should be sorted before put in the page.", in = ParameterIn.QUERY) SortDirectionDto direction,
-            @Parameter(description = "An account's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
+            @Parameter(description = "An user's identification.", required = true, in = ParameterIn.HEADER) UUID requesterId
     );
 }

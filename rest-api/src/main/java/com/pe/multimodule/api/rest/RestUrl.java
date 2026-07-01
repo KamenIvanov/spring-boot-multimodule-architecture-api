@@ -13,8 +13,8 @@ public final class RestUrl {
 
 
     // Secured ones
-    // All endpoints under this path, requires the account to be logged in
-    // All endpoints outside this path, are free of use by anonymous accounts
+    // All endpoints under this path, requires the user to be logged in
+    // All endpoints outside this path are free of use by anonymous access
     public static final String SECURED = APP_VERSION + "/secured";
 
     // Products

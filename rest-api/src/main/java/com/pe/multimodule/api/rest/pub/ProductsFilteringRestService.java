@@ -19,7 +19,7 @@ import java.util.UUID;
 /**
  * @author kamen on 2.08.22 г.
  */
-@Tag(name = "Products Filtering", description = "Used to filter products by anonymous accounts.")
+@Tag(name = "Products Filtering", description = "Used to filter products by anonymous access.")
 public interface ProductsFilteringRestService {
 
     @Operation(summary = "Loads products in pages with the given sort applied.")
