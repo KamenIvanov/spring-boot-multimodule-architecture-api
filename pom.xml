@@ -19,6 +19,9 @@
         <plugin.compiler.version>3.14.1</plugin.compiler.version>
         <plugin.source.version>3.3.1</plugin.source.version>
         <plugin.javadoc.version>3.12.0</plugin.javadoc.version>
+
+        <spring.boot.version>4.0.2</spring.boot.version>
+        <swagger.version>2.2.41</swagger.version>
     </properties>
 
     <modules>
@@ -36,6 +39,25 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.pe.multimodule</groupId>
+                <artifactId>dto</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
