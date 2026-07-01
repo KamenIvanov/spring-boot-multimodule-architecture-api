@@ -3,13 +3,13 @@ package com.pe.multimodule.api;
 import com.pe.multimodule.dto.AbstractDto;
 import tools.jackson.databind.json.JsonMapper;
 
-public class PeSerializer {
+public class JsonSerializer {
 
     private static final JsonMapper jsonMapper = JsonMapperSingleton.instance.getJsonMapper();
 
-    public static final PeSerializer instance = new PeSerializer();
+    public static final JsonSerializer instance = new JsonSerializer();
 
-    private PeSerializer() {
+    private JsonSerializer() {
         // Singleton
     }
 

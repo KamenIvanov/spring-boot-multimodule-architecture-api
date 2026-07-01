@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 @Schema(description = "The new product's data.")
 public class NewProductDto extends AbstractDto {
 
+    @Schema(description = "The entity name.")
+    @JsonProperty(value = "name")
+    private String name;
+
     @Schema(description = "The product's sku identification.")
     @JsonProperty(value = "sku")
     private String sku;
@@ -19,6 +23,14 @@ public class NewProductDto extends AbstractDto {
 
     public NewProductDto() {
         // POJO
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSku() {

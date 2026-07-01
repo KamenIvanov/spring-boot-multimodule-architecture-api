@@ -1,13 +1,13 @@
 package com.pe.multimodule.dto.product;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.pe.multimodule.dto.AbstractEntityDto;
+import com.pe.multimodule.dto.AbstractNamedEntityDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.UUID;
 
 @Schema(description = "The publication's description.")
-public class ProductDescriptionDto extends AbstractEntityDto {
+public class ProductDescriptionDto extends AbstractNamedEntityDto {
 
     @Schema(description = "The product's sku identification.")
     @JsonProperty(value = "sku")
@@ -17,8 +17,8 @@ public class ProductDescriptionDto extends AbstractEntityDto {
         // POJO
     }
 
-    public ProductDescriptionDto(UUID id) {
-        super(id);
+    public ProductDescriptionDto(UUID id, String name) {
+        super(id, name);
     }
 
     public String getSku() {
